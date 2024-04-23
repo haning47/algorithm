@@ -1,0 +1,90 @@
+﻿/*
+	coolmint.css
+	----------
+	This stylesheet controls colors and borders for this theme.
+*/
+
+/* 	Shell Required Styles BEGINS */
+
+BODY
+{
+    BACKGROUND-COLOR: white;
+    COLOR: black;
+    FONT-FAMILY: arial, verdana, helvetica, sans-serif;
+    FONT-SIZE: 8pt;
+    scrollbar-face-color: #3169A5;
+    scrollbar-shadow-color: #3169A5;
+    scrollbar-highlight-color: #3169A5;
+    scrollbar-3dlight-color: #000000;
+    scrollbar-darkshadow-color: #000000;
+    scrollbar-track-color:  #6b9ece;
+    scrollbar-arrow-color: #ffffff
+}
+HR
+{
+    COLOR: #cc9933
+}
+A:link
+{
+    COLOR: #6b9ece;
+    FONT-SIZE: 8pt;
+    TEXT-DECORATION: none
+}
+A:visited
+{
+    COLOR: #3366cc;
+    FONT-SIZE: 8pt;
+    TEXT-DECORATION: none
+}
+A:hover
+{
+    COLOR: #990000;
+    FONT-SIZE: 8pt;
+    TEXT-DECORATION: underline
+}
+.ShellServicesLink
+{
+    COLOR: white;
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: bold
+}
+.ShellFrame
+{
+    BORDER-BOTTOM: #6b9ece 1px solid;
+    BORDER-LEFT: #6b9ece 1px solid;
+    BORDER-RIGHT: #6b9ece 1px solid;
+    BORDER-TOP: #6b9ece 1px solid
+}
+.NavBody
+{
+    BACKGROUND-COLOR: white
+}
+.NavArea
+{
+    BACKGROUND-COLOR: #6b9ece;
+    FONT-WEIGHT: bold
+}
+.NavLink
+{
+    COLOR: black;
+    CURSOR: hand;
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: bold;
+    PADDING-RIGHT: 20px;
+    TEXT-DECORATION: none
+}
+.NavLink:hover
+{
+    COLOR: #cccccc;
+    TEXT-DECORATION: none
+}
+.NavShadedLink
+{
+    BACKGROUND-COLOR: #d3d3d3;
+	color:black;
+}
+
+
+
+
+

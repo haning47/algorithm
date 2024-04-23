@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Course Viewer</title>
+<script language="JavaScript" src="courseviewer/scormRTE.js"></script>
+<script language="JavaScript">
+var API=new LMSAPI();
+</script>
+<style type="text/css">
+<!--
+.menuscroll  {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;	
+	scrollbar-arrow-color:#FFFFFF;
+	scrollbar-3dlight-color:#FFFFFF;
+	scrollbar-base-color:#6b9ece;
+	scrollbar-track-color:#FFFFFF;
+	scrollbar-darkshadow-color:#FFFFFF;
+	scrollbar-highlight-color:#6b9ece;
+	scrollbar-shadow-color:#FFFFFF;
+}
+-->
+</style>
+</head>
+
+<frameset rows="*" cols="234,*" framespacing="2" frameborder="yes" border="2" bordercolor="#6699FF" id="menuFrameset_Loader">
+  <frame src="courseviewer/menu.htm" name="leftFrame_Loader" class="menuscroll" frameborder="no" marginwidth="0" marginheight="0" bordercolor="#6b9ece">
+  <frame src="courseviewer/blank.htm" name="mainFrame_Loader" frameborder="no" scrolling="auto" marginwidth="0" marginheight="0" bordercolor="#999999">
+</frameset>
+<!--
+<frameset rows="47,*" cols="*" framespacing="1" frameborder="yes" border="1" bordercolor="#FFFFFF">
+  <frame src="top.htm" name="topFrame_Loader" frameborder="no" scrolling="NO" noresize marginwidth="0" marginheight="0" bordercolor="#999999" >
+  <frameset rows="*" cols="188,*" framespacing="1" frameborder="yes" border="1" bordercolor="#FFFFFF" id="menuFrameset_Loader">
+    <frame src="menu.htm" name="leftFrame_Loader" frameborder="no" scrolling="auto" noresize marginwidth="0" marginheight="0" bordercolor="#999999">
+    <frame src="blank.htm" name="mainFrame_Loader" frameborder="yes" scrolling="auto" marginwidth="0" marginheight="0" bordercolor="#999999">
+  </frameset>
+</frameset>
+-->
+<noframes><body>
+</body></noframes>
+</html>

@@ -1,0 +1,35 @@
+﻿<html xmlns:lrn="foo">
+<head>
+	<title>Microsoft Content Viewer</title>
+</head>
+
+<LINK REL="stylesheet" TYPE="text/css" HREF="coolmint.css" ></LINK>
+<style>
+LRN\:SYLLABUS {behavior:url(syllabus.htc) }
+</style>
+<script language="JScript" src="../Personalization/FindLMSAPI.js"></script>
+<script language="JScript">
+	document.onreadystatechange = evt_OnReadyStateChange;
+
+	function evt_OnReadyStateChange()
+	{
+		if (document.readyState != 'complete')
+			return;
+
+		syllabus.oLMSAPI = FindLMSAPI();
+	}
+
+	window.onbeforeunload = onunload;
+	
+	function onunload()
+	{
+		document.all("syllabus").Unload();
+	}
+</script>
+<body class="NavBody">
+<lrn:syllabus name="syllabus" id="syllabus">
+	<select id="__idselectctrl" style="width:100%;display:none" onchange="syllabus.SelectTOC()"></select>
+	<div id="__idtreectrl" style="margin:5px"></div>
+</lrn:syllabus>
+</body>
+</html>

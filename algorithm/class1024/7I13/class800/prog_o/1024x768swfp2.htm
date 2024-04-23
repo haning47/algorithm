@@ -1,0 +1,92 @@
+﻿<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>播放介面</title>
+<script language="JavaScript" src="../prog/startmain.js"></script>
+<script language="JavaScript" src="../prog/AC_RunActiveContent.js"></script>
+<script language="JavaScript" src="../prog/AC_ActiveX.js"></script>
+<script language="JavaScript">
+<!--
+var frate="10", url="";
+function init() {
+	var pswf=unescape(location).split("?purl="), purl1, purl2, purl;
+	if(pswf.length<2) {
+		alert("媒體檔案路徑錯誤，請洽客服人員，謝謝。");
+		//return false;
+	} else {
+		url1=unescape(location.href);			
+		if(pswf[1].indexOf("media/")!=-1) {			
+			purl="../../";
+		} else {
+			purl="../";
+		}			
+	}
+	url=purl+getfile();
+	var flashvars="";	
+	if(url.indexOf(".xml")!=-1) {
+		flashvars="str_xml="+url+"&str_path="+purl+"media/"+"&str_movieurl=&str_frate=";
+	} else {
+		flashvars="str_xml=&str_path=&str_movieurl="+url+"&str_frate="+frate;
+	}	
+	AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0','width','1015','height','732','src','1024x768swfp2','quality','high','pluginspage','http://www.macromedia.com/go/getflashplayer','movie','1024x768swfp2','bgcolor','#ffffff','align','middle','id','mp1','name','mp1','allowScriptAccess','always','FlashVars',flashvars );
+}
+function getfile() {
+	var aurl,wmvfile,rvalue="";
+	aurl=location.href.split("?");
+	if(aurl.length>1)
+	{
+		wmvfile=aurl[1].split("=");
+		if(wmvfile.length>1)
+		{
+			if(wmvfile[0]=="purl")
+			{
+				rvalue=wmvfile[1];
+				/*
+				if(rvalue.indexOf(".asf")!=-1 || rvalue.indexOf(".wmv")!=-1)
+				{
+					rvalue=rvalue.replace(".asf", ".swf").replace(".wmv", ".swf");
+				}
+				*/
+			}
+			if(rvalue.indexOf(",frate:")!=-1)
+			{
+				wmvfile=rvalue.split(",frate:");
+				rvalue=wmvfile[0];
+				frate=wmvfile[1];
+			}
+		}
+	}
+	return(rvalue);
+}
+function exit() {
+	window.opener=null;
+	window.close();
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style></head>
+<body>
+<script language="JavaScript">
+	<!--
+	init();
+	//-->
+</script><noscript>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" name="mp1" width="1015" height="732" align="middle" id="mp1">
+<param name="allowScriptAccess" value="always" />
+<param name="movie" value="1024x768swfp2.swf" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<embed src="1024x768swfp2.swf" width="1015" height="732" align="middle" quality="high" bgcolor="#ffffff" name="mp1" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object></noscript>
+</body>
+</html>
