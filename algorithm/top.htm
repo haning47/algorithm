@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<title>高中資訊科技概論資訊融入教學教材發展計畫</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #CCCCCC;
+	margin-top: 0px;
+	margin-left: 0px;
+}
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+<script language="javascript">
+var pasfurl="";   // Offline
+
+if(document.layers) 
+   window.captureEvents(Event.MOUSEDOWN); 
+
+function nomenu() {   //This function aplies only to IE4, ignored otherwise.
+   event.cancelBubble=true;
+   event.returnValue=false;
+   return false;
+}
+
+function right(e) {   //This function applies to all browsers.
+   if(navigator.appName=="Netscape"&&(e.which!=1)) {
+     return false;
+   }
+   else if(navigator.appName=="Microsoft Internet Explorer"&&(event.button!= 1)) {
+      event.cancelBubble=true;
+      event.returnValue=false;
+      return false;
+   }
+}
+
+document.onmousedown=right; 	//for all browsers
+document.oncontextmenu=nomenu; 	//for IE5+   
+window.onmousedown=right;
+
+var wid1; 
+function init() {
+	window.moveTo(0, 0);
+	//window.To(1280, 800);
+	CurDiv('btn01');
+}
+function showClass(_url, _width, _height, _toolbar, _scrollbar) {
+alert("222222222")
+	if(_toolbar==0) {
+		_toolbar=",status=no,toolbar=no,menubar=no,location=no,resizable=no";
+	} else {
+		_toolbar="";
+	}
+	if(_scrollbar==0) {
+		_scrollbar=",scrollbar=no";
+	} else {
+		_scrollbar="";
+	}
+	window.focus();
+	wid1=window.open(_url, "", "top=0,left=0,width="+_width+",height="+_height+_toolbar+_scrollbar);
+	wid1.focus();
+}
+//目前駐點的圖層
+var strCurDivId="";
+//更換按鈕圖示
+function ChangeImage(strId, tp) {
+	var objImg=findObj(strId+"Img");	
+	//alert(strId+","+tp+","+strCurDivId);
+	if(objImg) {
+		if(tp==0) {
+			//normal
+			if(strId!=strCurDivId) {				
+				//img src="images/b03-1.gif"	b03-2.gif
+				eval(objImg).src=eval(objImg).src.replace("_1a.", "_1.");
+			}
+		} else if(tp==1) {
+			//over or focus			
+			eval(objImg).src=eval(objImg).src.replace("_1.", "_1a.");
+		}
+	}
+}
+
+//駐點圖層
+function CurDiv(strId) {
+	var objDiv, strUrl;
+	strLastId=strCurDivId;	
+	window.focus();
+	//alert(strCurDivId);
+	strCurDivId=strId;
+	objDiv=findObj(strId);
+	if(strLastId!="") {
+		ChangeImage(strLastId, 0);				
+	} 
+	if(strId!=strLastId) {		
+		strUrl=eval(strCurDivId+"Img").src=eval(strCurDivId+"Img").src.replace("_1a.", "_1.");
+	}
+	//alert(strId);
+	ChangeImage(strId, 1);
+}
+</script>
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	background-image: url(images/01.jpg);
+	background-repeat: repeat-x;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+#apDiv1 {
+	position:absolute;
+	left:83px;
+	top:62px;
+	width:537px;
+	height:25px;
+	z-index:7;
+}
+-->
+</style>
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function findObj(n, d) {
+	var p,i,x;
+	if(!d) d=document;
+	if((p=n.indexOf("?"))>0 && parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document;
+    n=n.substring(0,p);
+  }
+  if(!(x=d[n]) && d.all) x=d.all[n];
+  for (i=0; !x && i<d.forms.length; i++) x=d.forms[i][n];
+  for(i=0; !x && d.layers && i<d.layers.length; i++) x=findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); 
+  return x; 	
+}
+function MM_showHideLayers() { //v9.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) 
+  with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<link href="images/b2c_b.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+a:link {
+	color: #0000CC;
+}
+a:hover {
+	color: #CC0000;
+}
+a:visited {
+	color: #A02C98;
+}
+a {
+	font-size: 16px;
+	color: #0000CC;
+}
+.style1 {
+	color: #0000CC;
+	font-size: 16px;
+}
+a:active {
+	color: #0000CC;
+}
+-->
+</style></head>
+
+<body onLoad="MM_preloadImages('images/p1a.gif','images/p2a.gif')">
+<div id="apDiv1">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="24%" class="txt05"><img src="images/txt2.gif" width="127" height="21"></td>
+      <td width="76%" valign="middle"><a href="http://hsmaterial.moe.edu.tw/schema/is/index.htm" target="_blank" class="txt02 style1">http://hsmaterial.moe.edu.tw/schema/is/index.htm</a></td>
+    </tr>
+  </table>
+</div>
+<table width="1024" height="186" align="left" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="180" valign="bottom" background="images/title00.jpg"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="bottom"><div align="center"><a href="main01.htm" target="mainFrame" onclick="CurDiv('btn01')" onmouseover="ChangeImage('btn01',1)" onmouseout="ChangeImage('btn01',0)"><img src="images/b01_1.gif" id="btn01Img2" name="btn01Img" width="107" height="49" border="0" /></a></div></td>
+        <td valign="bottom"><div align="center"><a href="main02.htm" target="mainFrame" onclick="CurDiv('btn02')" onmouseover="ChangeImage('btn02',1)" onmouseout="ChangeImage('btn02',0)"><img src="images/b02_1.gif" id="btn02Img2" name="btn02Img" width="142" height="49" border="0" /></a></div></td>
+        <td valign="bottom"><div align="center"><a href="main03.htm" target="mainFrame" onclick="CurDiv('btn03');MM_showHideLayers('btn06','','hide','btn05','','hide','btn04','','hide','btn03','','show','btn02','','hide','btn01','','hide')" onmouseover="ChangeImage('btn03',1)" onmouseout="ChangeImage('btn03',0)"><img src="images/b03_1.gif" id="btn03Img2" name="btn03Img" width="142" height="49" border="0" /></a></div></td>
+        <td valign="bottom"><div align="center"><a href="main04.htm" target="mainFrame" onclick="CurDiv('btn04');MM_showHideLayers('btn06','','hide','btn05','','hide','btn04','','show','btn03','','hide','btn02','','hide','btn01','','hide')" onmouseover="ChangeImage('btn04',1)" onmouseout="ChangeImage('btn04',0)"><img src="images/b04_1.gif" id="btn04Img2" name="btn04Img" width="142" height="49" border="0" /></a></div></td>
+        <td valign="bottom"><div align="center"><a href="main05.htm" target="mainFrame" onclick="CurDiv('btn05');MM_showHideLayers('btn06','','hide','btn05','','show','btn04','','hide','btn03','','hide','btn02','','hide','btn01','','hide')" onmouseover="ChangeImage('btn05',1)" onmouseout="ChangeImage('btn05',0)"><img src="images/b05_1.gif" id="btn05Img2" name="btn05Img" width="188" height="49" border="0" /></a></div></td>
+        <td valign="bottom"><div align="center"><a href="main06.htm" target="mainFrame" onclick="CurDiv('btn06');MM_showHideLayers('btn06','','show','btn05','','hide','btn04','','hide','btn03','','hide','btn02','','hide','btn01','','hide')" onmouseover="ChangeImage('btn06',1)" onmouseout="ChangeImage('btn06',0)"><img src="images/b06_1.gif" id="btn06Img2" name="btn06Img" width="220" height="49" border="0" /></a></div></td>
+      </tr>
+      <tr>
+        <td height="21" colspan="6"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="24" height="47" valign="middle" background="images/title05.jpg">&nbsp;</td>
+              <td width="969" height="45" valign="middle" background="images/title06.jpg"><table width="98%" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="20%" valign="bottom"><img src="images/txt01.jpg" width="84" height="28" hspace="5" /></td>
+                    <td width="28%"><img src="images/txt02.jpg" width="84" height="28" hspace="25" /></td>
+                    <td width="33%" height="10"><img src="images/txt04.jpg" width="84" height="28" hspace="32" /></td>
+                    <td width="19%"><img src="images/txt03.jpg" width="84" height="28" hspace="24" /></td>
+                  </tr>
+              </table></td>
+              <td width="25" height="45" valign="middle" background="images/title07.jpg">&nbsp;</td>
+            </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<div id="Layer3" style="position:absolute; left:838px; top:63px; width:150px; height:25px; z-index:6">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="48%"><div align="center"><a href="HIM_Overview/HIM_Overview.pdf" target="_blank" onMouseOver="MM_swapImage('Image11','','images/p1a.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/p1.gif" alt="計劃概述" name="Image11" width="70" height="23" border="0"></a></div></td>
+      <td width="3%"><img src="images/l.gif" width="19" height="23"></td>
+      <td width="49%"><a href="HIM_Manual.pdf" target="_blank" onMouseOver="MM_swapImage('Image12','','images/p2a.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/p2.gif" alt="教材說明" name="Image12" width="70" height="23" border="0"></a></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
