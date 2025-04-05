@@ -1,24 +1,39 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>PDF Viewer - 松山高中教材</title>
-    <style>
-      html, body {
-        margin: 0;
-        height: 100%;
+<head>
+  <meta charset="utf-8">
+  <title>PDF Viewer - 松山高中教材</title>
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+  <script src="https://mozilla.github.io/pdf.js/web/viewer.mjs" type="module"></script>
+  <link rel="stylesheet" href="https://mozilla.github.io/pdf.js/web/viewer.css">
+  <link rel="resource" type="application/l10n" href="https://mozilla.github.io/pdf.js/web/locale/locale.json">
+  <style>
+    #printButton,
+    #downloadButton,
+    #secondaryPrint,
+    #secondaryDownload {
+      display: none !important;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    #outerContainer {
+      height: 100%;
+    }
+  </style>
+  <script>
+    window.PDFViewerApplicationOptions = window.PDFViewerApplicationOptions || {
+      set: function(prop, value) {
+        this[prop] = value;
       }
-      iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-    </style>
-  </head>
-  <body>
-    <iframe
-      src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://drive.google.com/file/d/1wBcUzz1rLmNhQCouqdyjV4OqZo9EyDWA/view?pli=1#disablePrint=true&disableDownload=true"
-      allowfullscreen
-    ></iframe>
-  </body>
+    };
+    window.PDFViewerApplicationOptions.set('defaultUrl', '114test.pdf');
+  </script>
+</head>
+<body>
+  <div id="outerContainer"></div>
+</body>
 </html>
